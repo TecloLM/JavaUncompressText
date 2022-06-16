@@ -10,48 +10,22 @@ sería: "aaabcccc".
 */
 public class Main {
     public static void main(String[] args) {
+
+        PrintResult(StringUtils.uncompressText("a"),"a");
+        PrintResult(StringUtils.uncompressText("ab"),"ab");
+        PrintResult(StringUtils.uncompressText("a3bc4"),"aaabcccc");
+
+        PrintResult(StringUtils.uncompressText("a3bc4"),"aaabcccc");
+        PrintResult(StringUtils.uncompressText("az5bj8"), "azzzzzbjjjjjjjj");
+
+    }
+
+    public static void PrintResult(String returnResult, String expectedResult) {
         System.out.println("Resultado obtenido:");
-        System.out.println(StringUtils.uncompressText("a"));
+        System.out.println(returnResult);
         System.out.println("Resultado esperado:");
-        System.out.println("a");
+        System.out.println(expectedResult);
 
-        if (StringUtils.uncompressText("a").equals("a")) {
-            System.out.println("OK!");
-        } else {
-            System.out.println("not OK!");
-        }
-
-        System.out.println("Resultado obtenido:");
-        System.out.println(StringUtils.uncompressText("ab"));
-        System.out.println("Resultado esperado:");
-        System.out.println("ab");
-
-        if (StringUtils.uncompressText("ab").equals("ab")) {
-            System.out.println("OK!");
-        } else {
-            System.out.println("not OK!");
-        }
-
-        System.out.println("Resultado obtenido:");
-        System.out.println(StringUtils.uncompressText("a3bc4"));
-        System.out.println("Resultado esperado:");
-        System.out.println("aaabcccc");
-
-        if (StringUtils.uncompressText("a3bc4").equals("aaabcccc")) {
-            System.out.println("OK!");
-        } else {
-            System.out.println("not OK!");
-        }
-
-        System.out.println("Resultado obtenido:");
-        System.out.println(StringUtils.uncompressText("az5bj8"));
-        System.out.println("Resultado esperado:");
-        System.out.println("azzzzzbjjjjjjjj");
-
-        if (StringUtils.uncompressText("az5bj8").equals("azzzzzbjjjjjjjj")) {
-            System.out.println("OK!");
-        } else {
-            System.out.println("not OK!");
-        }
+        System.out.println(returnResult.equals(expectedResult) ? "OK!\n":"not OK!\n");
     }
 }
